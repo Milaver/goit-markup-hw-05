@@ -96,12 +96,12 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1; 
+  z-index: 1;
   background-color: var(--logo-bg-white-color);
   border-bottom: 1px solid;
   border-color: var(--border-header);
   /* margin-bottom: 50px; */
-} 
+}
 .navigation {
   display: flex;
   align-items: center;
@@ -281,12 +281,10 @@ body {
   line-height: 1.17;
   text-transform: uppercase;
 }
-
 .text-submit {
   line-height: 1.71;
   color: var(--primary-text-color);
 }
-
 /*Чем мы занимаемся*/
 .work {
   padding-bottom: 94px;
@@ -306,17 +304,31 @@ body {
   margin: 0px -30px 0px 0px;
   padding: 0px;
 }
-.work-menu .work-image:not(:last-child) {
+.work-menu .work-menu-item:not(:last-child) {
   margin-right: 30px;
 }
+/* .work-image-title {position: relative;
+} */
 .work-image {
   display: block;
   max-width: 100%;
   height: auto;
 }
-.text-submite {
-  color: var(--primary-text-color);
-  line-height: 1.71;
+.work-menu-item {position: relative;}
+.work-title-background {
+  position: absolute;
+  bottom: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 370px;
+  height: 70px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--logo-bg-white-color);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 /*Наша команда*/
 .team {
