@@ -242,6 +242,7 @@ body {
   color: var(--logo-bg-white-color);
   background-color: var(--hero-but-hover);
 }
+/* Модальное окно */
 .backdrop {
   position: fixed;
   top: 0;
@@ -254,12 +255,13 @@ body {
 }
 .backdrop.is-hidden {
   opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transition: opacity 250ms var(--timing-function);
+  pointer-events: none; /*на элемент не действует клики мышкой*/
+  visibility: hidden; /*скрывает модальное окно*/
+  transition: opacity 250ms var(--timing-function),
+    visibility 250ms var(--timing-function);
 }
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.8);
+  transform: translate(-50%, -50%) scale(0.7);
 }
 .modal {
   position: absolute;
@@ -360,8 +362,19 @@ body {
 .work-menu .work-menu-item:not(:last-child) {
   margin-right: 30px;
 }
-.work-image-title {
+.work-menu-item {
   position: relative;
+  z-index: -1;
+}
+.work-image-title {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 370px;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
 }
 .work-image {
   display: block;
@@ -369,19 +382,14 @@ body {
   height: auto;
 }
 .work-title-background {
-  position: absolute;
-  bottom: 0;
-  padding-top: 27px;
-  padding-bottom: 27px;
-  width: 370px;
-  height: 70px;
+  /* padding-top: 27px;
+  padding-bottom: 27px; */
+
   font-size: 14px;
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
-  text-align: center;
   color: var(--logo-bg-white-color);
-  background-color: rgba(47, 48, 58, 0.8);
 }
 /*Наша команда*/
 .team {
@@ -616,6 +624,7 @@ body {
 .work-list-link {
   display: block;
   text-decoration: none;
+  transition: box-shadow 250ms var(--timing-function);
 }
 .work-list-link:hover .overlay,
 .work-list-link:focus .overlay {
